@@ -1,38 +1,32 @@
-var addButton = document.getElementById('addButton');
+var addButton = $('addButton');
 
-var list = document.getElementById('todoList');
-
-addButton.addEventListener('click', ()=>{
-
-    var todoList = document.querySelector('#todoList')
-
-    console.log(todoList)
-
-    var newTodoItem = document.createElement('li')
-    newTodoItem.classList.add('list-group-item')
-    newTodoItem.classList.add('p-3')
-    newTodoItem.classList.add('hvr-back-pulse')
+var list = $('todoList');
 
 
-    var userInput = document.getElementById('userInput').value;
+addButton.click(()=>{
 
-    newTodoItem.innerHTML = ('<img class="smallCheck mx-2" src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/checkmark-24-512.png" alt="checkmark"> ' + ' <span>' + userInput + '</span>') 
 
-    if (userInput) {
-        todoList.appendChild(newTodoItem)
+    if ($("userInput").text()) {
+        
+        var todoList = $('#todoList')
+        var newLi = todoList.add('li').addClass('list-group-item').addClass('p-3').addClass('hvr-back-pulse')
+
+        newLi.html($(userInput).text(('<img class="smallCheck mx-2" src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/checkmark-24-512.png" alt="checkmark"> ' + ' <span>' + userInput + '</span>') 
+        ))
     }
 
-    document.getElementById('userInput').value = ''
+    $('userInput').text("")
+
 })
 
 
-list.addEventListener('click', (e)=>{
+list.click((e)=>{
 
-    var delItem = e.target.parentElement
+    var self = $(this)
 
     for (let i=0; i < list.children.length; i++) {
-        if (delItem == list.children[i]) {
-            delItem.remove()
+        if (self == list.children[i]) {
+            self.remove()
         }
     }
         
