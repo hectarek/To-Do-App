@@ -28,13 +28,16 @@ addButton.addEventListener('click', ()=>{
 
 list.addEventListener('click', (e)=>{
 
-    var delItem = e.target.parentElement
+    setTimeout(() => {
+        var delItem = e.target.parentElement
 
     for (let i=0; i < list.children.length; i++) {
         if (delItem == list.children[i]) {
             delItem.remove()
+         }
         }
-    }
+    }, 300);
+    
         
 })
 
