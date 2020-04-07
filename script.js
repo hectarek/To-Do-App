@@ -3,7 +3,7 @@ var addButton = $('addButton');
 var list = $('todoList');
 
 
-addButton.click(()=>{
+addButton.click( function (){
 
 
     if ($("userInput").text()) {
