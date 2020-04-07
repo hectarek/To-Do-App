@@ -7,55 +7,51 @@
     <title>Hector's To-Do List</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto&family=Rubik:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <div class="container-fluid text-center">
-        <div class="row">
-            <div class="col-3 m-4 p-4 transparent"></div>
+    <div class="row m-5 text-center">
+        <div class="cardBox m-3 p-3">
+            <h1 class="m-4 p-4" style="font-size: 56px;">To-Do List</h1>
 
-            <div class="col-6 m-4 p-4">
+            <ul id="todoList" class="m-4 p-4 text-left">
+                <li class="list-group-item p-3 hvr-back-pulse">
+                    <img class='smallCheck mx-2' src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/checkmark-24-512.png" alt="checkmark">
+                <span>Item 1</span>
+                </li>
+                <li class="list-group-item p-3 hvr-back-pulse">
+                    <img class='smallCheck mx-2' src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/checkmark-24-512.png" alt="checkmark">
+                    <span>Item 2</span>
+                </li>
+                <li class="list-group-item p-3 hvr-back-pulse">
+                    <img class='smallCheck mx-2' src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/checkmark-24-512.png" alt="checkmark">
+                    <span>Item 3</span>
+                </li>
+            </ul>
 
-                <div  class="card">
-                    <h1 class="m-4 p-4" style="font-size: 56px;">To-Do List</h1>
-
-                    <ul id="todoList" class="m-3 p-4 text-left">
-                        <li class="list-group-item p-3 hvr-back-pulse">
-                            <img class='smallCheck mx-2' src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/checkmark-24-512.png" alt="checkmark">
-                        <span>Item 1</span>
-                        </li>
-                        <li class="list-group-item p-3 hvr-back-pulse">
-                            <img class='smallCheck mx-2' src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/checkmark-24-512.png" alt="checkmark">
-                            <span>Item 2</span>
-                        </li>
-                        <li class="list-group-item p-3 hvr-back-pulse">
-                            <img class='smallCheck mx-2' src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/checkmark-24-512.png" alt="checkmark">
-                            <span>Item 3</span>
-                        </li>
-                    </ul>
-    
-                    <div class=" row m-3 p-1 align-items-center">
-                        <div class="col-3">
-                            <label for="userInput">Enter New Item:</label>
-                        </div>
-                        <div class="col-6">
-                            <input class=" form-control m-4 p-2" type="text" name="userInput" id="userInput" placeholder="New to-do..">
-                        </div>
-                        <div class="col-3">
-                            <button class="btn btn-light m-2" id="addButton" >Add</button>
-                        </div>
-                    </div>
-                    <div class="whiteSpace"></div>
-                </div> 
-                
+            <div class=" row m-4 align-items-center">
+                <div class="col-3">
+                    <label for="userInput">Enter New Item:</label>
+                </div>
+                <div class="col-6">
+                    <input class=" form-control m-4 p-2" type="text" name="userInput" id="userInput" placeholder="New to-do..">
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-success m-2" id="addButton">Add</button>
+                </div>
             </div>
 
-            <div class="col-3 m-4 p-4 transparent"></div>
-        </div>
+            <div class="whiteSpace"></div>
 
-    </div>
+        </div> 
+        
+</div>
+        
+
+    
 
 
     <script src="script.js"></script>

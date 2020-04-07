@@ -18,14 +18,23 @@ addButton.addEventListener('click', ()=>{
 
     newTodoItem.innerHTML = ('<img class="smallCheck mx-2" src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/checkmark-24-512.png" alt="checkmark"> ' + ' <span>' + userInput + '</span>') 
 
-    todoList.appendChild(newTodoItem)
+    if (userInput) {
+        todoList.appendChild(newTodoItem)
+    }
 
     document.getElementById('userInput').value = ''
 })
 
+
 list.addEventListener('click', (e)=>{
 
-    
-    e.remove();
+    var delItem = e.target.parentElement
+
+    for (let i=0; i < list.children.length; i++) {
+        if (delItem == list.children[i]) {
+            delItem.remove()
+        }
+    }
         
 })
+

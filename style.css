@@ -15,16 +15,21 @@ body {
 }
 
 h1 {
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     color: #0f0f0f;
 }
 
-li, button, input {
-    font-family: 'Roboto', sans-serif;
+li, button, input, label {
+    font-family: 'Open Sans', sans-serif;
 }
 
-.transparent {
-    opacity: 100%;
+.cardBox {
+    position: fixed;
+    top: 10%;
+    left: 20%;
+    background-color: whitesmoke;
+    border: 1px lightslategrey;
+    border-radius: 2%;
 }
 
 .smallCheck {
