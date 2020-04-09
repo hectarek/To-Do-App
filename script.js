@@ -1,34 +1,41 @@
-var addButton = $('addButton');
+var addButton = $('#addButton');
 
-var list = $('todoList');
-
-
-addButton.click( function (){
+var list = $('#todoList');
 
 
-    if ($("userInput").text()) {
+addButton.click( function(){
+
+        var userInput = $("#userInput").val();
+
+        if (userInput) {
+        list.append('<li></li>')
         
-        var todoList = $('#todoList')
-        var newLi = todoList.add('li').addClass('list-group-item').addClass('p-3').addClass('hvr-back-pulse')
+        $('li').last()
+        .addClass('list-group-item').addClass('p-3').addClass('hvr-back-pulse')
+        .html('<img class="smallCheck mx-2" src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/checkmark-24-512.png" alt="checkmark"> ' + ' <span>' + userInput + '</span>') 
+        }
 
-        newLi.html($(userInput).text(('<img class="smallCheck mx-2" src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/checkmark-24-512.png" alt="checkmark"> ' + ' <span>' + userInput + '</span>') 
-        ))
-    }
-
-    $('userInput').text("")
+    $('#userInput').val('')
 
 })
 
+//The issue is in what is being clicked on.
+//Right now it is deleting the entire list. 
 
-list.click((e)=>{
+list.on('click', 'li', function(event) {
 
     var self = $(this)
 
-    for (let i=0; i < list.children.length; i++) {
-        if (self == list.children[i]) {
-            self.remove()
-        }
-    }
+    // var lis = list.children();
+
+    console.log(event);
+
+    self.css('text-decoration', 'line-through');
+
+    setTimeout(function() {
+
+        $(self).remove();
+
+    }, 500);
         
 })
-
